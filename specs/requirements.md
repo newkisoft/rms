@@ -248,7 +248,15 @@ REPORT
 
 **Then** the robot remains unplaced and later operational commands continue to be ignored until a valid `PLACE` is processed
 
-### AC-09: Accept a valid replacement placement
+### AC-09: Preserve state after an invalid replacement placement
+
+**Given** the robot is placed at `(2,2)` facing `EAST`
+
+**When** an invalid `PLACE`, such as `PLACE 5,2,NORTH`, is processed
+
+**Then** the invalid placement is ignored and the robot remains at `(2,2)` facing `EAST`
+
+### AC-10: Accept a valid replacement placement
 
 **Given** the robot is already placed
 
@@ -256,7 +264,7 @@ REPORT
 
 **Then** the current position and facing are replaced by the new placement
 
-### AC-10: Reject an invalid movement destination
+### AC-11: Reject an invalid movement destination
 
 **Given** the robot is on the table at any edge position
 
