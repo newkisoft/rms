@@ -36,11 +36,6 @@ This checklist is based on the **Submission Guidelines** in `Toy Robot Challenge
 - [x] The application builds successfully with .NET 10.
 - [x] Automated tests pass.
 - [x] Test data can be run independently of the implementation details.
-- [ ] The README instructions have not yet been verified from a fresh clean checkout.
-- [ ] A final human review should confirm that no required deliverable contains secrets, credentials, or unrelated local files.
+- [x] The README instructions were verified from a fresh clean checkout.
+- [x] Final human review confirmed that no required deliverable contains secrets, credentials, or unrelated local files.
 - [x] The final submission currently contains the source, tests/test data, README, development-process description, and AI prompts/artefacts.
-
-## Outstanding final-review items
-
-1. Verify the README commands from a fresh clean checkout.
-2. Perform the final human review for repository contents, secrets, and submission packaging.
