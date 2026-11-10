@@ -4,13 +4,14 @@ RMS Toy Robot Simulator is a C#/.NET 10 console application developed using Spec
 
 ## Current implementation stage
 
-Phases 1 and 2 are complete:
+Phases 1 through 3 are complete:
 
 - .NET 10 solution and projects are created.
 - `ToyRobot.Core` contains the `Direction` enum, coordinate value, and fixed 5x5 table boundary rules.
-- `ToyRobot.Tests` contains xUnit coverage for valid and invalid coordinates.
+- `ToyRobot.Core` contains the testable `Robot` state and transition rules.
+- `ToyRobot.Tests` contains xUnit coverage for valid and invalid coordinates, placement, movement, rotation, and unplaced-state behavior.
 
-Robot movement, command parsing, and console command processing are intentionally not implemented yet.
+Command parsing and console command processing are intentionally not implemented yet.
 
 ## Prerequisites
 
