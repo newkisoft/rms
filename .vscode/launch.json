@@ -1,0 +1,14 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug Toy Robot",
+      "type": "coreclr",
+      "request": "launch",
+      "program": "${workspaceFolder}/ToyRobot.Console/bin/Debug/net10.0/ToyRobot.Console.dll",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "stopAtEntry": false
+    }
+  ]
+}

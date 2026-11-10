@@ -233,7 +233,7 @@ dotnet test ToyRobot.Tests/ToyRobot.Tests.csproj
 dotnet run --project ToyRobot.Console/ToyRobot.Console.csproj
 ```
 
-The console project reads standard input until EOF, sends each line to the command processor, and writes non-null report results to standard output. Further end-to-end challenge verification remains in Phase 6.
+The console project reads standard input until EOF, sends each line to the command processor, and writes non-null report results to standard output. The three Phase 6 challenge examples are supplied in `test-data/` and are verified in the README.
 
 ## 5. Approval gates
 
