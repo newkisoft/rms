@@ -157,6 +157,23 @@ Test names remain descriptive; acceptance-criterion traceability is maintained h
 | `RobotTests.Move_DoesNothingWhenRobotIsUnplaced` | Verifies the movement part of AC-02. |
 | `RobotTests.RotateLeft_DoesNothingWhenRobotIsUnplaced` | Verifies the left-rotation part of AC-02. |
 | `RobotTests.RotateRight_DoesNothingWhenRobotIsUnplaced` | Verifies the right-rotation part of AC-02. |
+| `RobotTests.Move_SucceedsAfterPreviouslyBlockedMovement` | Verifies the valid-follow-up movement behavior in AC-07. |
+| `RobotTests.RotateLeft_FourConsecutiveRotationsReturnToOriginalDirection` | Verifies the repeated-left rotation edge case. |
+| `RobotTests.RotateRight_FourConsecutiveRotationsReturnToOriginalDirection` | Verifies the repeated-right rotation edge case. |
+
+### Phase 4 parser tests
+
+| Test | Parser requirement or acceptance-criterion relationship |
+|---|---|
+| `CommandParserTests.TryParse_ReturnsCommandForSimpleCommands` | Verifies recognition of `MOVE`, `LEFT`, `RIGHT`, and `REPORT`. |
+| `CommandParserTests.TryParse_ReturnsPlaceCommandForIntegerCoordinates` | Verifies `PLACE X,Y,F` parsing; out-of-range coordinates remain valid syntax and are rejected by `Robot.Place`. |
+| `CommandParserTests.TryParse_IgnoresSurroundingWhitespace` | Verifies the documented surrounding-whitespace assumption. |
+| `CommandParserTests.TryParse_ReturnsFalseForMalformedCoordinates` | Verifies malformed/non-integer coordinate rejection for AC-08. |
+| `CommandParserTests.TryParse_ReturnsFalseForInvalidDirections` | Verifies invalid direction rejection for AC-08. |
+| `CommandParserTests.TryParse_ReturnsFalseForExtraDelimiters` | Verifies malformed delimiter rejection. |
+| `CommandParserTests.TryParse_ReturnsFalseForMissingArguments` | Verifies incomplete `PLACE` rejection. |
+| `CommandParserTests.TryParse_ReturnsFalseForUnknownOrWrongCaseCommands` | Verifies unknown-command rejection and case sensitivity. |
+| `CommandParserTests.TryParse_ReturnsFalseForBlankInput` | Verifies blank input rejection. |
 
 ### Placement and validation
 
