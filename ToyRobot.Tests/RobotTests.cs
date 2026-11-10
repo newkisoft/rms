@@ -154,6 +154,58 @@ public sealed class RobotTests
     }
 
     [Fact]
+    public void Move_SucceedsAfterPreviouslyBlockedMovement()
+    {
+        var robot = new Robot();
+        robot.Place(new Coordinate(0, 0), Direction.West);
+
+        Assert.False(robot.Move());
+
+        robot.RotateRight();
+        robot.RotateRight();
+
+        Assert.True(robot.Move());
+        Assert.Equal(new Coordinate(1, 0), robot.Position);
+        Assert.Equal(Direction.East, robot.Facing);
+    }
+
+    [Theory]
+    [InlineData(Direction.North)]
+    [InlineData(Direction.East)]
+    [InlineData(Direction.South)]
+    [InlineData(Direction.West)]
+    public void RotateLeft_FourConsecutiveRotationsReturnToOriginalDirection(Direction initial)
+    {
+        var robot = new Robot();
+        robot.Place(new Coordinate(2, 2), initial);
+
+        robot.RotateLeft();
+        robot.RotateLeft();
+        robot.RotateLeft();
+        robot.RotateLeft();
+
+        Assert.Equal(initial, robot.Facing);
+    }
+
+    [Theory]
+    [InlineData(Direction.North)]
+    [InlineData(Direction.East)]
+    [InlineData(Direction.South)]
+    [InlineData(Direction.West)]
+    public void RotateRight_FourConsecutiveRotationsReturnToOriginalDirection(Direction initial)
+    {
+        var robot = new Robot();
+        robot.Place(new Coordinate(2, 2), initial);
+
+        robot.RotateRight();
+        robot.RotateRight();
+        robot.RotateRight();
+        robot.RotateRight();
+
+        Assert.Equal(initial, robot.Facing);
+    }
+
+    [Fact]
     public void RotateLeft_DoesNothingWhenRobotIsUnplaced()
     {
         var robot = new Robot();
