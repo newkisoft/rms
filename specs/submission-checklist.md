@@ -4,38 +4,43 @@ This checklist is based on the **Submission Guidelines** in `Toy Robot Challenge
 
 ## Required deliverables
 
-- [ ] Complete source code for the Toy Robot Simulator.
-  - [ ] C# source targeting .NET 10.
-  - [ ] Console application entry point and runtime behaviour.
-  - [ ] All required commands implemented: `PLACE`, `MOVE`, `LEFT`, `RIGHT`, and `REPORT`.
-- [ ] Test data to exercise the application.
-  - [ ] The three examples from the challenge PDF.
-  - [ ] Valid placements and replacement placements.
-  - [ ] Invalid placements, including an invalid placement after a successful placement.
-  - [ ] Boundary movements and ignored commands before placement.
-  - [ ] Rotations and command sequences.
-- [ ] Short README with instructions for building and running the solution.
-  - [ ] Prerequisites, including the required .NET SDK.
-  - [ ] Build command.
-  - [ ] Test command.
-  - [ ] Run command.
-  - [ ] Input source and expected input format.
-  - [ ] Example invocation and output.
-- [ ] Brief description of the development process.
-  - [ ] Describe the Spec-Driven Development stages used.
-  - [ ] Identify tools used and how they were used.
-  - [ ] Identify resources consulted, including the challenge PDF.
-  - [ ] Record notable decisions and trade-offs.
-- [ ] AI prompts and artefacts, if AI was used to write any part of the ToyRobot.
-  - [ ] Preserve the prompts used for code generation or material code assistance.
-  - [ ] Preserve relevant input artefacts supplied to the AI.
-  - [ ] Identify which generated or AI-assisted outputs were used, reviewed, or changed.
+- [x] Complete source code for the Toy Robot Simulator.
+  - [x] C# source targeting .NET 10.
+  - [x] Console application entry point and runtime behaviour.
+  - [x] All required commands implemented: `PLACE`, `MOVE`, `LEFT`, `RIGHT`, and `REPORT`.
+- [x] Test data to exercise the application.
+  - [x] The three examples from the challenge PDF in `test-data/`.
+  - [x] Valid placements and replacement placements covered by automated tests.
+  - [x] Invalid placements, including an invalid placement after a successful placement, covered by automated tests.
+  - [x] Boundary movements and ignored commands before placement covered by automated tests.
+  - [x] Rotations and command sequences covered by automated tests.
+- [x] Short README with instructions for building and running the solution.
+  - [x] Prerequisites, including the required .NET SDK.
+  - [x] Build command.
+  - [x] Test command.
+  - [x] Run command.
+  - [x] Input source and expected input format.
+  - [x] Example invocation and output.
+- [x] Brief description of the development process.
+  - [x] Spec-Driven Development stages are documented in `README.md`.
+  - [x] Tools and their use are documented in `README.md` and `docs/ai-usage.md`.
+  - [x] The challenge PDF and approved specifications are identified as resources.
+  - [x] Decisions and trade-offs are documented in `README.md` and `specs/architecture.md`.
+- [x] AI prompts and artefacts, because AI was used.
+  - [x] Substantive implementation prompts are preserved in `docs/ai-usage.md`.
+  - [x] The challenge PDF and generated source/document artefacts are retained.
+  - [x] Human review, approvals, and testing are disclosed.
 
 ## Final verification before submission
 
-- [ ] The application builds successfully with .NET 10.
-- [ ] Automated tests pass.
-- [ ] Test data can be run or followed independently of the implementation details.
-- [ ] The README instructions work from a clean checkout.
-- [ ] No required deliverable contains secrets, credentials, or unrelated local files.
-- [ ] The final submission contains the source, tests/test data, README, development-process description, and AI prompts/artefacts where applicable.
+- [x] The application builds successfully with .NET 10.
+- [x] Automated tests pass.
+- [x] Test data can be run independently of the implementation details.
+- [ ] The README instructions have not yet been verified from a fresh clean checkout.
+- [ ] A final human review should confirm that no required deliverable contains secrets, credentials, or unrelated local files.
+- [x] The final submission currently contains the source, tests/test data, README, development-process description, and AI prompts/artefacts.
+
+## Outstanding final-review items
+
+1. Verify the README commands from a fresh clean checkout.
+2. Perform the final human review for repository contents, secrets, and submission packaging.

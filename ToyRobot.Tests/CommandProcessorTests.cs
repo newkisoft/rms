@@ -79,6 +79,32 @@ public sealed class CommandProcessorTests
     }
 
     [Fact]
+    public void Process_AppliesValidReplacementPlacement()
+    {
+        var reports = ProcessCommands(
+            "PLACE 2,2,EAST",
+            "PLACE 1,3,NORTH",
+            "REPORT");
+
+        Assert.Equal(["1,3,NORTH"], reports);
+    }
+
+    [Fact]
+    public void Process_IgnoresCommandsAfterInvalidInitialPlacementUntilValidPlacement()
+    {
+        var reports = ProcessCommands(
+            "PLACE 5,0,NORTH",
+            "MOVE",
+            "LEFT",
+            "RIGHT",
+            "REPORT",
+            "PLACE 1,2,EAST",
+            "REPORT");
+
+        Assert.Equal(["1,2,EAST"], reports);
+    }
+
+    [Fact]
     public void Process_ContinuesAfterBlockedMovement()
     {
         var reports = ProcessCommands(
