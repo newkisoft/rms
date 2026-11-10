@@ -174,6 +174,21 @@ Test names remain descriptive; acceptance-criterion traceability is maintained h
 | `CommandParserTests.TryParse_ReturnsFalseForMissingArguments` | Verifies incomplete `PLACE` rejection. |
 | `CommandParserTests.TryParse_ReturnsFalseForUnknownOrWrongCaseCommands` | Verifies unknown-command rejection and case sensitivity. |
 | `CommandParserTests.TryParse_ReturnsFalseForBlankInput` | Verifies blank input rejection. |
+| `CommandParserTests.TryParse_ReturnsFalseForNullInput` | Verifies null input is rejected safely. |
+| `CommandParserTests.TryParse_ReturnsFalseForIntegerOverflow` | Verifies coordinates outside the integer range are rejected as malformed input. |
+
+### Phase 5 command processor tests
+
+| Test | Acceptance-criterion relationship |
+|---|---|
+| `CommandProcessorTests.Process_ProducesExpectedReportForChallengeExampleOne` | Verifies the first original challenge example and AC-03. |
+| `CommandProcessorTests.Process_ProducesExpectedReportForChallengeExampleTwo` | Verifies the second original challenge example and AC-04. |
+| `CommandProcessorTests.Process_ProducesExpectedReportForChallengeExampleThree` | Verifies the third original challenge example and AC-05. |
+| `CommandProcessorTests.Process_IgnoresCommandsBeforeFirstValidPlacement` | Verifies AC-02. |
+| `CommandProcessorTests.Process_ContinuesAfterInvalidCommand` | Verifies invalid commands do not stop later valid commands, supporting AC-07 and AC-08. |
+| `CommandProcessorTests.Process_PreservesStateAfterInvalidReplacementPlacement` | Verifies AC-09. |
+| `CommandProcessorTests.Process_ContinuesAfterBlockedMovement` | Verifies AC-06, AC-07, and AC-11. |
+| `CommandProcessorTests.Process_ProducesEachReportWithoutChangingState` | Verifies repeated reports and state-preserving reporting. |
 
 ### Placement and validation
 
@@ -218,7 +233,7 @@ dotnet test ToyRobot.Tests/ToyRobot.Tests.csproj
 dotnet run --project ToyRobot.Console/ToyRobot.Console.csproj
 ```
 
-The console project currently contains only its host placeholder; command parsing and console processing are planned for Phase 4 and later.
+The console project reads standard input until EOF, sends each line to the command processor, and writes non-null report results to standard output. Further end-to-end challenge verification remains in Phase 6.
 
 ## 5. Approval gates
 

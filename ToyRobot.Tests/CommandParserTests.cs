@@ -102,4 +102,18 @@ public sealed class CommandParserTests
     {
         Assert.False(parser.TryParse(input, out _));
     }
+
+    [Fact]
+    public void TryParse_ReturnsFalseForNullInput()
+    {
+        Assert.False(parser.TryParse(null, out _));
+    }
+
+    [Theory]
+    [InlineData("PLACE 2147483648,0,NORTH")]
+    [InlineData("PLACE 0,-2147483649,NORTH")]
+    public void TryParse_ReturnsFalseForIntegerOverflow(string input)
+    {
+        Assert.False(parser.TryParse(input, out _));
+    }
 }

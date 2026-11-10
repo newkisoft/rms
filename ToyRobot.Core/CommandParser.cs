@@ -40,12 +40,34 @@ public sealed class CommandParser
         if (!match.Success ||
             !int.TryParse(match.Groups[1].Value, NumberStyles.Integer, CultureInfo.InvariantCulture, out var x) ||
             !int.TryParse(match.Groups[2].Value, NumberStyles.Integer, CultureInfo.InvariantCulture, out var y) ||
-            !Enum.TryParse<Direction>(match.Groups[3].Value, ignoreCase: true, out var facing))
+            !TryParseDirection(match.Groups[3].Value, out var facing))
         {
             return false;
         }
 
         command = new Command(CommandKind.Place, x, y, facing);
         return true;
+    }
+
+    private static bool TryParseDirection(string value, out Direction direction)
+    {
+        switch (value)
+        {
+            case "NORTH":
+                direction = Direction.North;
+                return true;
+            case "EAST":
+                direction = Direction.East;
+                return true;
+            case "SOUTH":
+                direction = Direction.South;
+                return true;
+            case "WEST":
+                direction = Direction.West;
+                return true;
+            default:
+                direction = default;
+                return false;
+        }
     }
 }
