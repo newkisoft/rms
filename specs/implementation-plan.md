@@ -137,6 +137,16 @@ Verification:
 
 ## 3. Additional test coverage
 
+### 3.1 Test traceability
+
+Test names remain descriptive; acceptance-criterion traceability is maintained here rather than embedded in method names.
+
+| Test | Acceptance-criterion relationship |
+|---|---|
+| `TableTests.Contains_ReturnsTrue_ForValidCoordinates` | Supports the coordinate rule used by AC-01 and valid edge/corner placement in AC-08 and AC-10; full placement behaviour is added in Phase 3. |
+| `TableTests.Contains_ReturnsFalse_ForCoordinatesOutsideTable` | Supports the boundary rule used by AC-06, AC-08, and AC-11; full movement and placement behaviour is added in Phase 3. |
+| `TableTests.Size_IsFiveByFive` | Verifies the fixed table size required by the requirements and used by AC-06 and AC-11. |
+
 ### Placement and validation
 
 - All four valid directions.
