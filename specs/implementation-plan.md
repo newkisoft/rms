@@ -146,6 +146,17 @@ Test names remain descriptive; acceptance-criterion traceability is maintained h
 | `TableTests.Contains_ReturnsTrue_ForValidCoordinates` | Supports the coordinate rule used by AC-01 and valid edge/corner placement in AC-08 and AC-10; full placement behaviour is added in Phase 3. |
 | `TableTests.Contains_ReturnsFalse_ForCoordinatesOutsideTable` | Supports the boundary rule used by AC-06, AC-08, and AC-11; full movement and placement behaviour is added in Phase 3. |
 | `TableTests.Size_IsFiveByFive` | Verifies the fixed table size required by the requirements and used by AC-06 and AC-11. |
+| `RobotTests.Move_AdvancesOneUnitInTheFacingDirection` | Verifies the movement rules used by AC-03, AC-05, and AC-07. |
+| `RobotTests.RotateLeft_ChangesFacingWithoutChangingPosition` | Verifies the left-rotation rule used by AC-04 and AC-05. |
+| `RobotTests.RotateRight_ChangesFacingWithoutChangingPosition` | Verifies the right-rotation rule used by AC-07 and the rotation table. |
+| `RobotTests.Move_ReturnsFalseAndPreservesStateAtTableBoundary` | Verifies AC-06 and AC-11. |
+| `RobotTests.Place_ReturnsFalseAndLeavesRobotUnplacedForInvalidCoordinates` | Verifies the invalid initial-placement state in AC-08. |
+| `RobotTests.Place_ReturnsFalseAndLeavesRobotUnplacedForInvalidDirection` | Verifies invalid direction placement handling in AC-08. |
+| `RobotTests.Place_PreservesExistingStateWhenReplacementPlacementIsInvalid` | Verifies AC-09. |
+| `RobotTests.Place_ReplacesExistingStateWhenReplacementPlacementIsValid` | Verifies AC-10. |
+| `RobotTests.Move_DoesNothingWhenRobotIsUnplaced` | Verifies the movement part of AC-02. |
+| `RobotTests.RotateLeft_DoesNothingWhenRobotIsUnplaced` | Verifies the left-rotation part of AC-02. |
+| `RobotTests.RotateRight_DoesNothingWhenRobotIsUnplaced` | Verifies the right-rotation part of AC-02. |
 
 ### Placement and validation
 
@@ -181,16 +192,16 @@ Test names remain descriptive; acceptance-criterion traceability is maintained h
 
 ## 4. Build and verification commands to document
 
-The final README should document the exact commands selected for the repository, including equivalents of:
+The README documents the following commands for the repository:
 
 ```text
-dotnet restore
-dotnet build
-dotnet test
-dotnet run
+dotnet restore RmsToyRobot.slnx
+dotnet build RmsToyRobot.slnx
+dotnet test ToyRobot.Tests/ToyRobot.Tests.csproj
+dotnet run --project ToyRobot.Console/ToyRobot.Console.csproj
 ```
 
-The exact project or solution paths should be filled in after the project structure is created. No implementation or test code is created by this planning stage.
+The console project currently contains only its host placeholder; command parsing and console processing are planned for Phase 4 and later.
 
 ## 5. Approval gates
 
