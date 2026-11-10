@@ -4,6 +4,8 @@
 
 Codex assisted with requirements extraction, architecture and implementation planning, C#/.NET implementation, xUnit test creation, documentation, verification, and GitHub branch/pull-request operations for this repository.
 
+ChatGPT was used to help structure the Spec-Driven Development workflow, prepare implementation prompts, and review code and test coverage at each checkpoint. Codex CLI was used to implement the approved specifications, generate tests, and assist with documentation. The developer reviewed the generated artefacts, manually tested the application, and verified the automated test results.
+
 The user reviewed and approved the requirements, architecture, implementation phases, test naming improvement, and pull-request workflow at the checkpoints recorded in the conversation. The user also supplied the challenge PDF in the repository. Codex did not independently invent external requirements; the approved `specs/` documents and PDF were used as the source of truth.
 
 ## Actual implementation prompts
