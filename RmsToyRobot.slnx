@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="ToyRobot.Console/ToyRobot.Console.csproj" />
+  <Project Path="ToyRobot.Core/ToyRobot.Core.csproj" />
+  <Project Path="ToyRobot.Tests/ToyRobot.Tests.csproj" />
+</Solution>
